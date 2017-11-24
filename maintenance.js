@@ -6,8 +6,8 @@ var balancer_port = 8443;
 var clients_port = 443;
 
 var options = {
-    key: fs.readFileSync('cedar.key'),
-    cert: fs.readFileSync('cedar.cer'),
+    key: fs.readFileSync('ssl.key'),
+    cert: fs.readFileSync('ssl.cer'),
     requestCert: true
 };
 
