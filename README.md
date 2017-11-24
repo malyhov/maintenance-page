@@ -3,7 +3,9 @@
 ## Установка
 
 git clone https://github.com/malyhov/maintenance-page.git maintenance-page
+
 cd maintenance-page
+
 npm install -g pm2
 
 ## Использование
