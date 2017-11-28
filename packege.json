@@ -1,14 +1,14 @@
 {
   "name": "maintenance-page",
   "version": "1.0.0",
-  "description": "Maintenance page for Kedr",
+  "description": "Maintenance page for Service",
   "main": "maintenance.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git@0001git10.msk.mts.ru:cedar/maintenance-page.git"
+    "url": "git@github.com:malyhov/maintenance-page.git"
   },
   "author": "Vladislav Malykhov",
   "license": "MIT",
