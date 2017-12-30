@@ -1,32 +1,32 @@
-var fs = require('fs'),
-    https = require('https'),
-    express = require('express');
+var fs = require('fs');
+var https = require('https');
+var express = require('express');
 
-var balancer_port = 8443;
-var clients_port = 443;
+var balancerPort = 8443;
+var clientsPort = 443;
 
 var options = {
-    key: fs.readFileSync('ssl.key'),
-    cert: fs.readFileSync('ssl.cer'),
-    requestCert: true
+  key: fs.readFileSync('ssl.key'),
+  cert: fs.readFileSync('ssl.cer'),
+  requestCert: true
 };
 
 
-var balancer_app = express();
-balancer_app.get('/*', function (req, res) {
-    res.send('');
+var balancerApp = express();
+balancerApp.get('/*', function (req, res) {
+  res.send('');
 });
-var balancer_server = https.createServer(options, balancer_app);
-balancer_server.listen(balancer_port, function() {
-    console.log("Start server on port " + balancer_port);
+var balancerServer = https.createServer(options, balancerApp);
+balancerServer.listen(balancerPort, function() {
+  console.log("Start server on port " + balancerPort);
 });
 
 
-var clients_app = express();
-clients_app.get('/*', function (req, res) {
-    res.sendFile(__dirname + '/public/index.html');
+var clientsApp = express();
+clientsApp.get('/*', function (req, res) {
+  res.sendFile(__dirname + '/public/index.html');
 });
-var clients_server = https.createServer(options, clients_app);
-clients_server.listen(clients_port, function() {
-    console.log("Start server on port " + clients_port);
+var clientsServer = https.createServer(options, clientsApp);
+clientsServer.listen(clientsPort, function() {
+  console.log("Start server on port " + clientsPort);
 });
