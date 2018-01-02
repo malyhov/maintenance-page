@@ -1,7 +1,7 @@
 #!/bin/bash
 
 systemctl stop nginx
-/opt/apache2/bin/apachectl stop
+systemctl stop apache2
 
 pm2 start maintenance.js
 

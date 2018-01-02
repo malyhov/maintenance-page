@@ -2,7 +2,7 @@
 
 pm2 stop maintenance.js
 
-/opt/apache2/bin/apachectl start
+systemctl start apache2
 systemctl start nginx
 
 echo ""
